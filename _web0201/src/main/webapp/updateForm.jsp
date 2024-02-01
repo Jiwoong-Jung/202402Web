@@ -28,7 +28,7 @@ if (rs.next()) {
 }
 %>
 <a href="index.jsp">처음으로</a>
-<form action="insert.jsp" method="post">
+<form action="update.jsp" method="post">
 이름<input type="text" name="ename" value="<%=ename %>" /><br/>
 직무<input type="text" name="job" value="<%=job %>"  /><br/>
 월급<input type="text" name="sal" value="<%=sal %>"  /><br/>
