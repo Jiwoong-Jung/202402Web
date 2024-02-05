@@ -12,7 +12,7 @@
 <body>
 <%
 request.setCharacterEncoding("utf-8");
-String driver="oracle.jdbc.driver.OracleDriver";
+//String driver="oracle.jdbc.driver.OracleDriver";
 String url="jdbc:oracle:thin:@localhost:1521:xe";
 Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 String sql = "insert into score values(?,?,?,?,?)";
