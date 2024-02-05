@@ -28,11 +28,12 @@
         ResultSet rs = stmt.executeQuery("select * from score");
     ) {
         while (rs.next()) {
+        	int num = rs.getInt("num");
             int sum = rs.getInt("kor") + rs.getInt("eng") + 
                       rs.getInt("math");
 %>          
             <tr>
-                <td><%=rs.getInt   ("num" )%></td>
+                <td><a href="<%=num %>"><%=num %></a></td>
                 <td><%=rs.getString("name")%></td>
                 <td><%=rs.getInt   ("kor" )%></td>
                 <td><%=rs.getInt   ("eng" )%></td>
