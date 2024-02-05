@@ -32,15 +32,17 @@ if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드)
 }
 %>
 <a href="index.jsp">처음으로</a>
-<form action="update.jsp" method="post">
+<form action="update.jsp" method="post" id="frm">
 번호<input type="text" name="num" value="<%=num %>"/><br/>
 이름<input type="text" name="name" value="<%=name %>"/><br/>
 국어<input type="text" name="kor" value="<%=kor %>"/><br/>
 영어<input type="text" name="eng" value="<%=eng %>"/><br/>
 수학<input type="text" name="math" value="<%=math %>" /><br/>
 <button>수정</button>
+<a href="location.href='delete.jsp?num=<%=num%>'">삭제</a>
 </form>
-<button onclick="location.href='delete.jsp?num=<%=num%>'">삭제</button>
+<input type="button" onclick="document.getElementById('frm').submit();" value="수정">
+<button onClick="location.href='delete.jsp?num=<%=num%>'">삭제</button>
 </body>
 </html>
 

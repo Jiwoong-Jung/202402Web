@@ -18,7 +18,7 @@ String driver="oracle.jdbc.driver.OracleDriver";
 String url="jdbc:oracle:thin:@localhost:1521:xe";
 Class.forName(driver);
 Connection conn = DriverManager.getConnection(url, "scott", "tiger");
-String sql = "select ename, job, sal from emp1";
+String sql = "select ename, job, sal*12 as annsal from emp1";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 ResultSet rs = pstmt.executeQuery(); %>
 <table border="1">
@@ -29,7 +29,7 @@ while (rs.next()) { %>
 		<a href="updateForm.jsp?ename=<%=rs.getString("ename") %>">
 		<%=rs.getString("ename") %></a></td>
 		<td><%=rs.getString("job") %></td>
-		<td><%=rs.getString("sal") %></td>
+		<td><%=rs.getString("annsal") %></td>
 		<td><a href="delete.jsp?ename=<%=rs.getString("ename")%>">삭제</a></td>
 	</tr>
 <%} %>	
