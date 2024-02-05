@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,6 +35,27 @@ public class WinEmp extends JFrame {
 	JTextArea ta = new JTextArea(10, 40);
 	Connection conn;
 	Statement stmt;
+	class Clock implements Runnable {
+
+		@Override
+		public void run() {
+			for (;;) {
+				LocalDateTime localDateTime = LocalDateTime.now();
+				String localDateTimeFormat1 
+				= localDateTime.format(
+						DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초"));
+//				System.out.println(localDateTimeFormat1);
+				WinEmp.this.setTitle(localDateTimeFormat1);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}		
+		}
+
+	}
 	public WinEmp() {
 		String url = "jdbc:mysql://localhost:3306/firm";
 		String id = "root";
@@ -67,6 +90,9 @@ public class WinEmp extends JFrame {
 		jp3.add(lb2); jp3.add(tf2);
 		jp3.add(lb3); jp3.add(tf3);
 		
+		Clock clock = new Clock();
+		Thread th = new Thread(clock);
+		th.start();
 		this.setTitle("DEPT 관리");
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
