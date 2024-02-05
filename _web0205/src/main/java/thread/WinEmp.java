@@ -90,8 +90,12 @@ public class WinEmp extends JFrame {
 		jp3.add(lb2); jp3.add(tf2);
 		jp3.add(lb3); jp3.add(tf3);
 		
-		Clock clock = new Clock();
-		Thread th = new Thread(clock);
+//		Clock clock = new Clock();
+//		Thread th = new Thread(clock);
+//		th.start();
+		
+		Clock2 clock2 = new Clock2(this);
+		Thread th = new Thread(clock2);
 		th.start();
 		this.setTitle("DEPT 관리");
 		this.setLocation(500, 400);
