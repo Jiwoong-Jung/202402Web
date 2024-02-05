@@ -38,8 +38,11 @@ if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드)
 국어<input type="text" name="kor" value="<%=kor %>"/><br/>
 영어<input type="text" name="eng" value="<%=eng %>"/><br/>
 수학<input type="text" name="math" value="<%=math %>" /><br/>
-<input type="submit" value="수정"/>
-<button>삭제</button>
+<button>수정</button>
 </form>
+<button onclick="location.href='delete.jsp?num=<%=num%>'">삭제</button>
 </body>
 </html>
+
+
+
