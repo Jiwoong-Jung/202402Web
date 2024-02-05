@@ -23,7 +23,7 @@ String name = "";
 String kor = "";
 String eng = "";
 String math = "";
-if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드);
+if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드)
 	num = rs.getString("num");
 	name = rs.getString("name");
 	kor = rs.getString("kor");
@@ -32,14 +32,14 @@ if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드);
 }
 %>
 <a href="index.jsp">처음으로</a>
-<form action="insert.jsp" method="post">
+<form action="update.jsp" method="post">
 번호<input type="text" name="num" value="<%=num %>"/><br/>
 이름<input type="text" name="name" value="<%=name %>"/><br/>
 국어<input type="text" name="kor" value="<%=kor %>"/><br/>
 영어<input type="text" name="eng" value="<%=eng %>"/><br/>
 수학<input type="text" name="math" value="<%=math %>" /><br/>
-<input type="submit" value="확인"/>
-<input type="reset" />
+<input type="submit" value="수정"/>
+<button>삭제</button>
 </form>
 </body>
 </html>
