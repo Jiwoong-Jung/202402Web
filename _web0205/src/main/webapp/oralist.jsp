@@ -33,7 +33,7 @@
                       rs.getInt("math");
 %>          
             <tr>
-                <td><a href="<%=num %>"><%=num %></a></td>
+                <td><a href="updateForm.jsp?num=<%=num %>"><%=num %></a></td>
                 <td><%=rs.getString("name")%></td>
                 <td><%=rs.getInt   ("kor" )%></td>
                 <td><%=rs.getInt   ("eng" )%></td>
