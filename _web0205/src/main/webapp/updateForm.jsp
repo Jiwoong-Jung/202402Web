@@ -18,13 +18,17 @@ String sql = "select * from score where num = ?";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, request.getParameter("num"));
 ResultSet rs = pstmt.executeQuery();
-String num = rs.getString("num");
-String name = rs.getString("name");
-String kor = rs.getString("kor");
-String eng = rs.getString("eng");
-String math = rs.getString("math");
+String num = "";
+String name = "";
+String kor = "";
+String eng = "";
+String math = "";
 if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드);
-	
+	num = rs.getString("num");
+	name = rs.getString("name");
+	kor = rs.getString("kor");
+	eng = rs.getString("eng");
+	math = rs.getString("math");
 }
 %>
 <a href="index.jsp">처음으로</a>
