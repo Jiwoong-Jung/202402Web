@@ -11,7 +11,7 @@
 </head>
 <body>
    <h1>Hello</h1>
-   <i class="fab fab fa-500px"></i>
+   <a href="oralist.jsp"><i class="fab fab fa-500px"></i></a>
    <i class="fab fa-android"></i>
 </body>
 </html>
