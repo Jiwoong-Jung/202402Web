@@ -29,12 +29,13 @@
     ) {
         while (rs.next()) {
         	int num = rs.getInt("num");
+        	String name = rs.getString("name");
             int sum = rs.getInt("kor") + rs.getInt("eng") + 
                       rs.getInt("math");
 %>          
             <tr>
                 <td><a href="updateForm.jsp?num=<%=num %>"><%=num %></a></td>
-                <td><%=rs.getString("name")%></td>
+                <td><a href="updateForm.jsp?num=<%=num %>"><%=name %></a></td>
                 <td><%=rs.getInt   ("kor" )%></td>
                 <td><%=rs.getInt   ("eng" )%></td>
                 <td><%=rs.getInt   ("math")%></td>
