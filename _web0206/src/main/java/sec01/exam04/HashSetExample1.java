@@ -12,6 +12,17 @@ public class HashSetExample1 {
 		set.add("Java");
 		set.add("iBATIS");
 		
+//		Iterator<String> it = set.iterator();
+//		while (it.hasNext()) {
+//			String str = it.next();
+//			System.out.println(str);
+//		}
+		
+//순차적인 자료 순회
+//		for (String str : set) {
+//			System.out.println(str);
+//		}
+//		
 		int size = set.size();
 		System.out.println("총 객체수: " + size);
 		
