@@ -20,18 +20,18 @@ public class HashMapExample {
 		System.out.println("\t홍길동 : " + map.get("홍길동"));
 		System.out.println();
 		
-		Set<String> keySet = map.keySet();
-		Iterator<String> keyIterator = keySet.iterator();
-		while(keyIterator.hasNext()) {
-		  String key = keyIterator.next();
-		  Integer value = map.get(key);
-		  System.out.println("\t" + key + " : " + value);
-		}		
-		System.out.println();	
-		
-		map.remove("홍길동");
-		System.out.println("총 Entry 수: " + map.size());
-		
+//		Set<String> keySet = map.keySet();
+//		Iterator<String> keyIterator = keySet.iterator();
+//		while(keyIterator.hasNext()) {
+//		  String key = keyIterator.next();
+//		  Integer value = map.get(key);
+//		  System.out.println("\t" + key + " : " + value);
+//		}		
+//		System.out.println();	
+//		
+//		map.remove("홍길동");
+//		System.out.println("총 Entry 수: " + map.size());
+//		
 		Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
 		Iterator<Map.Entry<String, Integer>> entryIterator = entrySet.iterator();
 		while(entryIterator.hasNext()) {
@@ -41,9 +41,9 @@ public class HashMapExample {
 		  System.out.println("\t" + key + " : " + value);
 		}
 		System.out.println();
-		
-		map.clear();
-		System.out.println("총 Entry 수: " + map.size());
+//		
+//		map.clear();
+//		System.out.println("총 Entry 수: " + map.size());
 	}
 }
 
