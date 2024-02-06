@@ -32,7 +32,7 @@ if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드)
 }
 %>
 <a href="index.jsp">처음으로</a>
-<form action="update.jsp" method="post" id="frm">
+<form method="get" id="frm">
 번호<input type="text" name="num" value="<%=num %>"/><br/>
 이름<input type="text" name="name" value="<%=name %>"/><br/>
 국어<input type="text" name="kor" value="<%=kor %>"/><br/>
@@ -41,8 +41,19 @@ if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드)
 <button>수정</button>
 <a href="location.href='delete.jsp?num=<%=num%>'">삭제</a>
 </form>
-<input type="button" onclick="document.getElementById('frm').submit();" value="수정">
-<button onClick="location.href='delete.jsp?num=<%=num%>'">삭제</button>
+<input type="button" onclick="test()" value="수정">
+<button onClick="del()">삭제</button>
+<script>
+function del() {
+/*	location.href='delete.jsp?num=<%=num%>'; */
+	document.getElementById('frm').action='delete.jsp';
+	document.getElementById('frm').submit();
+}
+function test() {
+	document.getElementById('frm').action='update.jsp';
+	document.getElementById('frm').submit();
+}
+</script>
 </body>
 </html>
 
