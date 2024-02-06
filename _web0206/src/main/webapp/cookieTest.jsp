@@ -9,6 +9,7 @@
 <body>
 <%
 Cookie ck = new Cookie("loginId", "admin");
+ck.setMaxAge(60);  // 60초
 response.addCookie(ck);
 %>
 <%= ck.getName() %><br/>
