@@ -40,9 +40,9 @@ if (rs.next()) {  // 왜 if 일까? 무조건 1건(행, 레코드)
 수학<input type="text" name="math" value="<%=math %>" /><br/>
 </form>
 <input type="button" onclick="update()" value="수정">
-<button onClick="del()">삭제</button>
+<button onClick="delete2()">삭제</button>
 <script>
-function del() {
+function delete2() {
 //	location.href='delete.jsp?num=<%=num%>';
 	document.getElementById('frm').action='delete.jsp';
 	document.getElementById('frm').submit();
