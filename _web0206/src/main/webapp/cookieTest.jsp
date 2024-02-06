@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-Cookie ck = new Cookie("aaa", "bbb");
+Cookie ck = new Cookie("loginId", "admin");
 response.addCookie(ck);
 %>
 <%= ck.getName() %><br/>
